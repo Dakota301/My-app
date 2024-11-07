@@ -1,0 +1,27 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu PWA com Node.js</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then((registration) => {
+        alert("Service Worker registrado com sucesso:", registration);
+      })
+      .catch((error) => {
+        alert("Falha ao registrar o Service Worker:", error);
+      });
+  }
+</script>
+</head>
+<body>
+  <h1>Bem-vindo ao meu PWA!</h1>
+  <p>Este é um Progressive Web App com Node.js.</p>
+  <script src="app.js"></script>
+</body>
+</html>
